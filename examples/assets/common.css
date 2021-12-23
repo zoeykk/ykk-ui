@@ -1,0 +1,19 @@
+.tip {
+  width: 60%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ecf8ff;
+  border-radius: 4px;
+  border-left: #1b9ae4 5px solid;
+}
+
+.warning {
+  width: 60%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ecf8ff;
+  border-radius: 4px;
+  border-left: orange 5px solid;
+}
