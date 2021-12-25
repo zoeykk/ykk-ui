@@ -29,7 +29,8 @@
     "@vue/cli-service": "~4.5.0",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
-    "sass-loader": "^12.4.0",
+    "sass": "^1.45.1",
+    "sass-loader": "^8.0.2",
     "vue-markdown-loader": "^2.5.0",
     "vue-template-compiler": "^2.6.11"
   }

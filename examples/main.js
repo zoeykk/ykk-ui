@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import YkkButton from '../packages/YkkButton'
 import DemoBlock from './components/DemoBlock.vue'
-import './assets/common.css'
+import './assets/common.scss'
 Vue.use(YkkButton)
 Vue.component('DemoBlock', DemoBlock)
 

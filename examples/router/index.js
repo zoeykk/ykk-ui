@@ -1,23 +1,38 @@
+// export default router
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 
-Vue.use(VueRouter)
+import navConfig from './routerCon'
 
-const routes = [
-  {
-    path: '/',
-    name: 'test',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "test" */ '../docs/test.md')
-  }
-]
-
-const router = new VueRouter({
-  mode: 'history',
+Vue.use(Router)
+const docsRoutefun = navConfig => {
+  const route = []
+  navConfig.forEach(item => {
+    if (item.groups) {
+      item.groups.forEach(group => {
+        group.list.forEach(nav => {
+          route.push({
+            path: nav.path,
+            name: nav.name,
+            component: r =>
+              require.ensure([], () => r(require(`@/docs${nav.path}.md`)))
+          })
+        })
+      })
+    } else {
+      route.push({
+        path: item.path,
+        name: item.name,
+        component: r =>
+          require.ensure([], () => r(require(`@/docs${item.path}.md`)))
+      })
+    }
+  })
+  return route
+}
+const docsRoute = docsRoutefun(navConfig)
+export default new Router({
+  mode: 'hash',
   base: process.env.BASE_URL,
-  routes
+  routes: [{ path: '/', redirect: '/preface' }, ...docsRoute]
 })
-
-export default router

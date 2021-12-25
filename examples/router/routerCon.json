@@ -1,0 +1,30 @@
+[
+  {
+    "name": "test",
+    "groups": [
+      {
+        "groupName": "测试组件",
+        "list": [
+          {
+            "path": "/test",
+            "title": "测试1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "components",
+    "groups": [
+      {
+        "groupName": "基础组件",
+        "list": [
+          {
+            "path": "/test2",
+            "title": "test2"
+          }
+        ]
+      }
+    ]
+  }
+]
