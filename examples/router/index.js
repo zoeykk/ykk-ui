@@ -5,17 +5,16 @@ import Router from 'vue-router'
 import navConfig from './routerCon'
 
 Vue.use(Router)
-const docsRoutefun = navConfig => {
+const docsRoutefun = (navConfig) => {
   const route = []
-  navConfig.forEach(item => {
+  navConfig.forEach((item) => {
     if (item.groups) {
-      item.groups.forEach(group => {
-        group.list.forEach(nav => {
+      item.groups.forEach((group) => {
+        group.list.forEach((nav) => {
           route.push({
             path: nav.path,
             name: nav.name,
-            component: r =>
-              require.ensure([], () => r(require(`@/docs${nav.path}.md`)))
+            component: (r) => require.ensure([], () => r(require(`@/docs${nav.path}.md`)))
           })
         })
       })
@@ -23,8 +22,7 @@ const docsRoutefun = navConfig => {
       route.push({
         path: item.path,
         name: item.name,
-        component: r =>
-          require.ensure([], () => r(require(`@/docs${item.path}.md`)))
+        component: (r) => require.ensure([], () => r(require(`@/docs${item.path}.md`)))
       })
     }
   })
@@ -32,7 +30,7 @@ const docsRoutefun = navConfig => {
 }
 const docsRoute = docsRoutefun(navConfig)
 export default new Router({
-  mode: 'hash',
+  mode: 'history',
   base: process.env.BASE_URL,
-  routes: [{ path: '/', redirect: '/preface' }, ...docsRoute]
+  routes: [{ path: '/', redirect: '/test' }, ...docsRoute]
 })

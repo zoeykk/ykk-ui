@@ -1,23 +1,15 @@
-## tip
+## Button 按钮
 
-:::tip
-这是一个 tip。这是一个 tip。这是一个 tip。这是一个 tip。这是一个 tip。这是一个 tip。
-:::
+常用的基础操作
 
-## warning
+### 基础用法
 
-:::warning
-这是一个 warning，**这是一个 warning，**。
-这是一个 warning。
-这是一个 warning，这是一个 warning，这是一个 warning，这是一个 warning。
-:::
+基础的按钮用法。
 
-## demo222
-
-:::demo 这是一个 demo。这是一个 demo。这是一个 demo。这是一个 demo。这是一个 demo。这是一个 demo。这是一个 demo。这是一个 demo。
+:::demo 使用`type`、`plain`、`round`和`circle`属性来定义 Button 的样式
 
 ```html 按钮
-<ykk-button>btn</ykk-button>
+<k-button>基础按钮</k-button>
 ```
 
 :::

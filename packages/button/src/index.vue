@@ -6,17 +6,17 @@
 
 <script>
 export default {
-  name: 'YkkButton'
+  name: 'KButton'
 }
 </script>
 
-<style scoped >
+<style scoped>
 .btn {
   display: inline-block;
-  height: 32px;
-  line-height: 32px;
+  height: 30px;
+  line-height: 30px;
   padding: 0 8px;
-  border: 1px solid #aaa;
+  border: 1px solid #eee;
   border-radius: 4px;
   cursor: pointer;
 }

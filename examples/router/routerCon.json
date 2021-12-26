@@ -1,27 +1,17 @@
 [
   {
-    "name": "test",
+    "name": "组件",
     "groups": [
       {
-        "groupName": "测试组件",
+        "groupName": "Basic",
         "list": [
           {
             "path": "/test",
-            "title": "测试1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "components",
-    "groups": [
-      {
-        "groupName": "基础组件",
-        "list": [
+            "title": "Button 按钮"
+          },
           {
             "path": "/test2",
-            "title": "test2"
+            "title": "test"
           }
         ]
       }

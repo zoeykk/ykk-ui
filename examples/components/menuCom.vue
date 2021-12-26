@@ -6,12 +6,7 @@
           <div class="nav-group" v-for="(group, key) in item.groups" :key="key">
             <div class="nav-group__title">{{ group.groupName }}</div>
             <ul class="pure-menu-list">
-              <li
-                class="nav-item"
-                v-for="(navItem, key) in group.list"
-                v-show="!navItem.disabled"
-                :key="key"
-              >
+              <li class="nav-item" v-for="(navItem, key) in group.list" v-show="!navItem.disabled" :key="key">
                 <router-link active-class="active" :to="navItem.path" exact v-text="navItem.title"></router-link>
               </li>
             </ul>
@@ -79,8 +74,7 @@ export default {
       transition: 0.15s ease-out;
       font-weight: bold;
       &.active {
-        color: #fc297f;
-        border-bottom: #000000 2px solid;
+        color: #409eff;
         border-radius: 4px;
       }
     }
@@ -100,7 +94,7 @@ export default {
         font-weight: normal;
         &:hover,
         &.active {
-          color: #fc297f;
+          color: #409eff;
         }
       }
     }

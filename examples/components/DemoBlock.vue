@@ -57,9 +57,6 @@ export default {
   watch: {
     isExpanded(val) {
       this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0'
-      console.log(this.$el.getElementsByClassName('description').length)
-      console.log(this.$el.getElementsByClassName('highlight'))
-      console.log(this.codeAreaHeight)
       if (!val) {
         this.fixedControl = false
         this.$refs.control.style.left = '0'
@@ -70,21 +67,16 @@ export default {
 </script>
 <style lang="less">
 .demo-block {
-  width: 60%;
-  padding: 8px 16px;
-  margin: auto;
-  margin-top: 10px;
-  border-left: solid 5px#fc297f;
-  background-color: #f8d1db;
-  border-radius: 3px;
+  margin-top: 8px;
+  border: 1px solid #eee;
+  border-radius: 4px;
   transition: 0.2s;
-  &.hover {
-    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
+  .source {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
   }
   .meta {
-    margin-top: 10px;
-    background-color: #fafafa;
-    border-radius: 8px;
+    border-radius: 4px;
     overflow: hidden;
     height: 0;
     transition: height 0.2s;
@@ -92,25 +84,16 @@ export default {
 
   .description {
     box-sizing: border-box;
-    border-radius: 3px;
     font-size: 14px;
-    line-height: 22px;
-    color: #666;
-    word-break: break-word;
-    margin: 10px;
-    background-color: #fff;
-    p {
-      width: 100%;
-    }
+    padding: 0 8px;
   }
   .demo-block-control {
-    border-top: solid 1px #eaeefb;
+    border-top: solid 1px #eee;
     height: 44px;
     box-sizing: border-box;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 4px;
     text-align: center;
-    margin-top: 10px;
     color: #d3dce6;
     cursor: pointer;
     position: relative;
@@ -140,8 +123,7 @@ export default {
     }
 
     &:hover {
-      color: #fc297f;
-      background-color: #f9fafc;
+      color: #409eff;
     }
 
     & .text-slide-enter,
