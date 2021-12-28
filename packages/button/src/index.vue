@@ -1,28 +1,60 @@
 <template>
-  <div class="btn" @click="$emit('click')">
+  <div
+    :class="{
+      'k-btn': true,
+      'k-btn--primary': type === 'primary',
+      'k-btn--success': type === 'success',
+      'k-btn--danger': type === 'danger'
+    }"
+    @click="$emit('click')"
+  >
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'KButton'
+  name: 'KButton',
+  props: {
+    type: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 
 <style scoped>
-.btn {
+.k-btn + .k-btn {
+  margin-left: 8px;
+}
+.k-btn {
   display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 8px;
-  border: 1px solid #eee;
+  font-size: 14px;
+  line-height: 1;
+  padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
 }
-.btn:hover {
-  background-color: #41b883;
+.k-btn--primary {
   color: #fff;
-  border: 1px solid #41b883;
+  background-color: #409eff;
+}
+.k-btn--primary:hover {
+  opacity: 0.6;
+}
+.k-btn--success {
+  color: #fff;
+  background-color: #67c23a;
+}
+.k-btn--success:hover {
+  opacity: 0.6;
+}
+.k-btn--danger {
+  color: #fff;
+  background-color: #f56c6c;
+}
+.k-btn--danger:hover {
+  opacity: 0.6;
 }
 </style>

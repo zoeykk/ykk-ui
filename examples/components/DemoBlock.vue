@@ -1,7 +1,7 @@
 <template>
   <div class="demo-block" :class="blockClass">
     <!-- 源码运行 -->
-    <div class="source">
+    <div class="source" :style="{ 'border-bottom': isExpanded ? '1px solid #eee' : '1px solid transparent' }">
       <slot name="source"></slot>
     </div>
     <!-- 源码 -->
@@ -71,9 +71,10 @@ export default {
   border: 1px solid #eee;
   border-radius: 4px;
   transition: 0.2s;
+  overflow: hidden;
   .source {
     padding: 8px;
-    border-bottom: 1px solid #eee;
+    // border-bottom: 1px solid #eee;
   }
   .meta {
     border-radius: 4px;
@@ -92,7 +93,6 @@ export default {
     height: 44px;
     box-sizing: border-box;
     background-color: #fff;
-    border-radius: 4px;
     text-align: center;
     color: #d3dce6;
     cursor: pointer;
